@@ -1,0 +1,41 @@
+.header {
+  .container {
+    display: flex;
+    align-items: center;
+    .logo-link {
+      margin-right: 25.1rem;
+    }
+    .togler-open {
+      border: none;
+      background-color: transparent;
+      display: none;
+    }
+    @include responsive(desktop) {
+      .logo-link {
+        margin-right: 6rem;
+      }
+    }
+    @include responsive(tablet) {
+      & {
+        padding: 22px 24px;
+        justify-content: space-between;
+      }
+      .logo-link__img {
+        width: 140px;
+        height: 20px;
+      }
+      .wrapper {
+        display: none;
+      }
+      .show-wrapper {
+        display: block;
+      }
+      .togler-open {
+        display: block;
+      }
+      .header__btn {
+        display: none;
+      }
+    }
+  }
+}

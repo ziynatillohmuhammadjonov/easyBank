@@ -1,0 +1,71 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  overflow-x: hidden;
+  width: 100%;
+  transition: display 0.3s;
+
+  .sitenav {
+    display: flex;
+
+    ul {
+      display: flex;
+      gap: 3rem;
+      a {
+        @include fontStyle(1.4rem, 16px, normal, -0.107692px);
+        color: $text-color;
+        padding: 3.2rem 0;
+        display: block;
+        position: relative;
+      }
+      a::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%);
+        width: 0;
+        height: 4px;
+        bottom: 0;
+        transition: width 0.3s;
+      }
+      a:hover::before {
+        width: 100%;
+      }
+    }
+  }
+  @include responsive(tablet) {
+    position: fixed;
+    border-radius: 4px;
+    top: 88px;
+    background-color: #ffffff;
+    width: auto;
+    padding: 2rem 0;
+    .sitenav {
+      display: flex;
+      align-items: center;
+
+      ul {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        a {
+          padding: 12px 0;
+          @include fontStyle(1.8rem, 21px, normal, -0.138462px);
+          color: $primary-dark-color;
+        }
+        a::before {
+          display: none;
+        }
+      }
+    }
+  }
+  @include responsive(mobile) {
+    .sitenav {
+      ul {
+      }
+    }
+  }
+}
